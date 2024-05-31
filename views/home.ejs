@@ -15,11 +15,21 @@
         <button type="submit">Rechercher</button>
       </form>
     </div>
+      <div id="postForm" class="hidden">
+          <h2>Poster une Annonce</h2>
+          <form method="POST" action="/api/ads">
+              <input type="email" name="email" id="email" placeholder="Votre email" >
+              <input type="tel" name="phone" id="phone" placeholder="Votre numéro" >
+              <textarea name="description" id="description" placeholder="Description de l'annonce" required></textarea>
+              <button type="submit">Poster</button>
+          </form>
+      </div>
     <button onclick="document.getElementById('postForm').classList.toggle('hidden')">Poster une annonce</button>
     <div id="adsContainer">
       <% ads.forEach(ad => { %>
         <div>
           <h3><%= ad.email %></h3>
+          <p><%= ad.phone %></p>
           <p><%= ad.description %></p>
         </div>
       <% }); %>
@@ -32,14 +42,6 @@
           <button type="submit" <%= i === page ? 'disabled' : '' %>><%= i %></button>
         </form>
       <% } %>
-    </div>
-    <div id="postForm" class="hidden">
-      <h2>Poster une Annonce</h2>
-      <form method="POST" action="/api/ads">
-        <input type="email" name="email" id="email" placeholder="Votre email" required>
-        <textarea name="description" id="description" placeholder="Description de l'annonce" required></textarea>
-        <button type="submit">Poster</button>
-      </form>
     </div>
   </div>
 </body>
