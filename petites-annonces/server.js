@@ -1,24 +1,26 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const bodyParser = require('body-parser');
+const cors = require('cors'); // Import CORS middleware
 const path = require('path');
 
 const app = express();
 const PORT = 3000;
 const db = new sqlite3.Database(':memory:'); // Using an in-memory database for example
 
+app.use(cors()); // Use CORS middleware
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public'))); // Serve static files (HTML, CSS, JS)
 
 db.serialize(() => {
   db.run(`
-    CREATE TABLE ads (
-                       id INTEGER PRIMARY KEY AUTOINCREMENT,
-                       email TEXT NOT NULL,
-                       description TEXT NOT NULL,
-                       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )
-  `, (err) => {
+        CREATE TABLE ads (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            email TEXT NOT NULL,
+            description TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    `, (err) => {
     if (err) {
       console.error('Error creating table:', err.message);
     } else {
@@ -27,10 +29,10 @@ db.serialize(() => {
   });
 
   db.run(`
-    INSERT INTO ads (email, description) VALUES
-                                           ('example1@example.com', 'Description of ad 1'),
-                                           ('example2@example.com', 'Description of ad 2')
-  `, (err) => {
+        INSERT INTO ads (email, description) VALUES
+        ('example1@example.com', 'Description of ad 1'),
+        ('example2@example.com', 'Description of ad 2')
+    `, (err) => {
     if (err) {
       console.error('Error inserting data:', err.message);
     } else {
