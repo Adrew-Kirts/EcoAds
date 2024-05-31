@@ -33,9 +33,9 @@
         <button type="submit">Poster</button>
       </form>
     </div>
-    <div id="adsContainer" class="ads">
+    <ul id="adsContainer" class="ads">
       <% ads.forEach(ad=> { %>
-        <div class="ad">
+        <li class="ad">
           <h3>
             <%= ad.email %>
           </h3>
@@ -45,9 +45,9 @@
           <p>
             <%= ad.description %>
           </p>
-        </div>
+        </li>
         <% }); %>
-    </div>
+    </ul>
     <div id="pagination">
       <% for (let i=1; i <=totalPages; i++) { %>
         <form method="GET" action="/" style="display: inline;">
