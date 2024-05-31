@@ -1,10 +1,23 @@
 /* General Styles */
+:root {
+  --primary: #7c384e;
+  --secondary: #f2d3ac;
+  --gray: #bdbdbd;
+  --dark: #3b190f;
+  --white: #fff;
+  --light: #fdf7ef;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f8f9fa;
-  color: #343a40;
+  font-family: "Roboto", sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
   margin: 0;
   padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .hidden {
@@ -21,16 +34,38 @@ body {
   border-radius: 8px;
 }
 
-/* Header */
-.container h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #007bff;
+header {
+  background-color: var(--primary);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.header-content {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#logo {
+  width: 60px;
+}
+
+h1 {
+  text-decoration: underline;
+}
+
+main {
+  margin: 80px, 5%, 5%, 0;
 }
 
 /* Search Container */
 .search-container {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
@@ -55,84 +90,4 @@ body {
 
 .search-container button:hover {
   background-color: #0056b3;
-}
-
-/* Post Form */
-#postForm {
-  margin-bottom: 20px;
-}
-
-#postForm h2 {
-  margin-bottom: 15px;
-  color: #007bff;
-}
-
-#postForm form {
-  display: flex;
-  flex-direction: column;
-}
-
-#postForm input,
-#postForm textarea {
-  padding: 10px;
-  border: 1px solid #ced4da;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-#postForm button {
-  padding: 10px 20px;
-  background-color: #28a745;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-#postForm button:hover {
-  background-color: #218838;
-}
-
-/* Ads Container */
-#adsContainer div {
-  border: 1px solid #dee2e6;
-  padding: 15px;
-  border-radius: 4px;
-  background-color: #f8f9fa;
-  margin-bottom: 10px;
-}
-
-#adsContainer div h3 {
-  margin: 0 0 10px 0;
-  color: #007bff;
-}
-
-#adsContainer div p {
-  margin: 0;
-}
-
-/* Pagination */
-#pagination {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-#pagination button {
-  padding: 10px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-right: 5px;
-}
-
-#pagination button:hover {
-  background-color: #0056b3;
-}
-
-#pagination button:disabled {
-  background-color: #6c757d;
-  cursor: default;
 }
