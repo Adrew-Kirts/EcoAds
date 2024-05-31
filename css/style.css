@@ -1,24 +1,138 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+  margin: 0;
+  padding: 0;
+}
+
 .hidden {
   display: none;
 }
 
+/* Container */
 .container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 40px auto;
   padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-.search-container,
+/* Header */
+.container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #007bff;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+
+.search-container button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.search-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Post Form */
 #postForm {
   margin-bottom: 20px;
 }
 
-#adsContainer div {
-  border: 1px solid #ccc;
+#postForm h2 {
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+#postForm form {
+  display: flex;
+  flex-direction: column;
+}
+
+#postForm input,
+#postForm textarea {
   padding: 10px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
   margin-bottom: 10px;
 }
 
+#postForm button {
+  padding: 10px 20px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#postForm button:hover {
+  background-color: #218838;
+}
+
+/* Ads Container */
+#adsContainer div {
+  border: 1px solid #dee2e6;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  margin-bottom: 10px;
+}
+
+#adsContainer div h3 {
+  margin: 0 0 10px 0;
+  color: #007bff;
+}
+
+#adsContainer div p {
+  margin: 0;
+}
+
+/* Pagination */
+#pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
 #pagination button {
+  padding: 10px 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
   margin-right: 5px;
+}
+
+#pagination button:hover {
+  background-color: #0056b3;
+}
+
+#pagination button:disabled {
+  background-color: #6c757d;
+  cursor: default;
 }
