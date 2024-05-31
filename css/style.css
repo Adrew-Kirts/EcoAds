@@ -1,0 +1,24 @@
+.hidden {
+  display: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.search-container,
+#postForm {
+  margin-bottom: 20px;
+}
+
+#adsContainer div {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#pagination button {
+  margin-right: 5px;
+}
