@@ -60,6 +60,9 @@ h1 {
 
 main {
   margin: 80px, 5%, 5%, 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Search Container */

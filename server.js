@@ -19,7 +19,8 @@ db.serialize(() => {
   db.run(`
         CREATE TABLE ads (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            email TEXT NOT NULL,
+            email TEXT NULLABLE,
+            phone TEXT NULLABLE,
             description TEXT NOT NULL,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         )
@@ -255,14 +256,14 @@ app.get('/', (req, res) => {
 });
 
 app.post('/api/ads', (req, res) => {
-  const { email, description } = req.body;
+  const { email, description, phone } = req.body;
   if (!email || !description) {
     res.status(400).json({ error: 'Email and description are required' });
     return;
   }
 
-  const query = `INSERT INTO ads (email, description) VALUES (?, ?)`;
-  const params = [email, description];
+  const query = `INSERT INTO ads (email, description, phone) VALUES (?, ?, ?)`;
+  const params = [email, description, phone];
 
   db.run(query, params, function(err) {
     if (err) {
