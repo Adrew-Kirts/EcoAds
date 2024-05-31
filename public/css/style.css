@@ -18,20 +18,22 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  list-style: none;
+}
+
+button {
+  background-color: var(--primary);
+  color: var(--light);
+  /* border: 2px solid var(--dark); */
+  border-radius: 30px;
+  box-shadow: 0 0 5px var(--dark);
+  height: 60px;
+  padding: 0 15px;
 }
 
 .hidden {
   display: none;
-}
-
-/* Container */
-.container {
-  max-width: 800px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
 }
 
 header {
@@ -39,6 +41,8 @@ header {
   display: flex;
   justify-content: center;
   width: 100%;
+  position: fixed;
+  top: 0;
 }
 
 .header-content {
@@ -48,6 +52,7 @@ header {
   justify-content: center;
   align-items: center;
   gap: 40px;
+  color: var(--light);
 }
 
 #logo {
@@ -59,7 +64,9 @@ h1 {
 }
 
 main {
-  margin: 80px, 5%, 5%, 0;
+  margin-top: 80px;
+  margin-bottom: 80px;
+  padding: 0 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -71,6 +78,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  gap: 8px;
   margin-bottom: 20px;
 }
 
@@ -93,4 +101,45 @@ main {
 
 .search-container button:hover {
   background-color: #0056b3;
+}
+
+.post-annonce {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.post-annonce input,
+.post-annonce textarea {
+  width: 100%;
+}
+
+.ads {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.ad {
+  width: 100%;
+  border: 2px solid var(--dark);
+  border-radius: 15px;
+  background-color: var(--secondary);
+  margin: 5%;
+  padding: 5%;
+}
+
+.ad h3,
+.ad p {
+  text-overflow: ellipsis;
+}
+
+.page-number {
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  margin: 4px;
 }
